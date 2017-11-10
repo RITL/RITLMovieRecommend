@@ -1,0 +1,10 @@
+<!-- wxml是编写小程序骨架的文件 -->
+<!-- <div>标签 与<View>标签一样 -->
+<!-- 只有<text>包围的才可以长 按复制 -->
+<view class='container'>
+    <image class="user-avatar" mode='aspectFill' src="/Images/welcome/xiaowen_header.png"></image> 
+    <text class='user-name'>Hello, 岳小文</text>
+    <view class='moto-container' bindtap="onTap">
+        <text class='user-moto'>开启小程序之旅</text>
+    </view>
+</view> 
