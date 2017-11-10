@@ -1,0 +1,13 @@
+<!--pages/stars/stars.wxml-->
+<template name='starsTemplate'>
+    <view>
+        <!-- 评分星星 -->
+        <image src='/images/icon/star.png'></image>
+        <image src='/images/icon/star.png'></image>
+        <image src='/images/icon/star.png'></image>
+        <image src='/images/icon/star.png'></image>
+        <image src='/images/icon/star.png'></image>
+        <!-- 评分数组 -->
+        <text></text>
+    </view>
+</template>

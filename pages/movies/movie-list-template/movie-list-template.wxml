@@ -1,0 +1,17 @@
+<import src='../movie/movie-template.wxml' />
+<!--pages/movies/movies/movie-list-template.wxml-->
+
+<template name='movieListTemplate'>
+    <view>
+        <view>
+            <text>正在热映</text>
+            <view>
+                <text>更多</text>
+                <image src='/images/icon/arrow-right.png'></image>
+            </view>
+        </view>
+        <template is='movieTempalate'/>
+        <template is='movieTempalate'/>
+        <template is='movieTempalate'/>
+    </view>
+</template>

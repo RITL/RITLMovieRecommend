@@ -1,0 +1,10 @@
+<!-- 导入stars-template -->
+<import src="../stars/stars-template.wxml" />
+
+<template name='movieTemplate'>
+    <view>
+        <image src='/images/movie-photo.jpg'></image>
+        <text>盗梦空间</text>
+        <template is="starsTemplate"/>
+    </view>
+    </template>

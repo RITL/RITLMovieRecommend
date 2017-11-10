@@ -10,7 +10,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "1.6.4",
 	"appid": "touristappid",
-	"projectname": "ReaderMovie02",
+	"projectname": "RITLMovieRecommend",
 	"condition": {
 		"search": {
 			"current": -1,
