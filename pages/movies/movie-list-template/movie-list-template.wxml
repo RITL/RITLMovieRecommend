@@ -10,8 +10,8 @@
                 <image src='/images/icon/arrow-right.png'></image>
             </view>
         </view>
-        <template is='movieTempalate'/>
-        <template is='movieTempalate'/>
-        <template is='movieTempalate'/>
+        <template is='movieTemplate'/>
+        <template is='movieTemplate'/>
+        <template is='movieTemplate'/>
     </view>
 </template>

@@ -15,7 +15,7 @@ Page({
     onPostTap: function (event) {
 
         //target指的是当前点击的组件 currentTarget指的是事件捕获的组件
-        var postId = event.target.dataset.postId;
+        var postId = event.currentTarget.dataset.postId;
         // console.log(postId);
         wx.navigateTo({
             url: "post-detail/post-detail?id=" + postId,

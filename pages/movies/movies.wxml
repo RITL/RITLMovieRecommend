@@ -1,3 +1,6 @@
-<view>
-
-</view>
+<import src='movie-list-template/movie-list-template.wxml'/>
+    <view>
+        <template is='movieListTemplate' />
+        <template is='movieListTemplate' />
+        <template is='movieListTemplate' />
+    </view>
