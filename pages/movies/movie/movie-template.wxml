@@ -2,9 +2,9 @@
 <import src="../stars/stars-template.wxml" />
 
 <template name='movieTemplate'>
-    <view>
-        <image src='/images/movie-photo.jpg'></image>
-        <text>盗梦空间</text>
-        <template is="starsTemplate"/>
+    <view class='movie-container'>
+        <image class='movie-img' src='/images/movie-photo.jpg'></image>
+        <text class='movie-title'>盗梦空间</text>
+        <template is="starsTemplate" />
     </view>
-    </template>
+</template>

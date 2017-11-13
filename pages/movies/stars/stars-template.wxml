@@ -1,13 +1,15 @@
 <!--pages/stars/stars.wxml-->
 <template name='starsTemplate'>
-    <view>
-        <!-- 评分星星 -->
-        <image src='/images/icon/star.png'></image>
-        <image src='/images/icon/star.png'></image>
-        <image src='/images/icon/star.png'></image>
-        <image src='/images/icon/star.png'></image>
-        <image src='/images/icon/star.png'></image>
+    <view class='stars-container'>
+        <view class='stars'>
+           <!-- 评分星星 -->
+            <image src='/images/icon/star.png'></image>
+            <image src='/images/icon/star.png'></image>
+            <image src='/images/icon/star.png'></image>
+            <image src='/images/icon/star.png'></image>
+            <image src='/images/icon/star.png'></image>
+        </view>
         <!-- 评分数组 -->
-        <text></text>
+        <text class='stars-score'>9.7</text>
     </view>
 </template>
