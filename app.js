@@ -1,6 +1,6 @@
 App({
     //全局对象
-    globalData: {
+    globalData: { 
         g_isPlayingMusic: false,
         g_currentMusicPostId:null
     }
