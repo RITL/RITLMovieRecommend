@@ -8,6 +8,13 @@
 
 .movie-list-head {
     padding: 30rpx 20rpx 22rpx;
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-between;  */
+}
+
+.inner-container {
+    margin: 0  auto 20rpx; 
 }
 
 .slogan {
@@ -15,11 +22,12 @@
 }
 
 .more {
-    float: right;
+     float: right; 
+
 }
 
 .more-text {
-    vertical-align: middle;
+     vertical-align: middle; 
     margin-right: 10rpx;
     color: #1f4ba5;
 }
@@ -27,7 +35,7 @@
 .more-img{
     width: 9rpx;
     height: 16rpx;
-    vertical-align: middle;
+     vertical-align: middle; 
 }
 
 .movies-container{
