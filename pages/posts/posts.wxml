@@ -15,7 +15,7 @@
     </swiper>
 
     <!-- 新闻列表 -->
-    <block wx:for="{{posts_key}}" wx:for-item="item" wx:for-index="idx">
+    <block wx:for="{{posts_key}}"  wx:key="warning" wx:for-item="item" wx:for-index="idx">
         <!-- //template  -->
         <view catchtap="onPostTap" data-post-Id="{{item.postId}}">
             <template is="postItem" data="{{...item}}" />
