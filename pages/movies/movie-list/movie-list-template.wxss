@@ -7,7 +7,7 @@
 }
 
 .movie-list-head {
-    padding: 30rpx 20rpx 22rpx;
+    padding: 15rpx 20rpx 22rpx;
     /* display: flex;
     flex-direction: row;
     justify-content: space-between;  */

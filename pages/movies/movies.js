@@ -1,3 +1,4 @@
+var util = require('../../utils/util.js');
 var app = getApp();
 
 Page({
@@ -21,12 +22,12 @@ Page({
         //top 250
         var top250Url = baseUrl + '/v2/movie/top250';
 
-        this.getMovieListData(in_theatersUrl,'inTheaters');
-        this.getMovieListData(comingSoonUrl,'comingSoon');
-        this.getMovieListData(top250Url,'top250');
+        this.getMovieListData(in_theatersUrl,'inTheaters','正在热映');
+        this.getMovieListData(comingSoonUrl,'comingSoon','即将上映');
+        this.getMovieListData(top250Url,'top250','Top250');
     },
 
-    getMovieListData: function (url, key) {
+    getMovieListData: function (url, key, categoryTitle) {
 
         var that = this;
         wx.request({
@@ -41,7 +42,7 @@ Page({
 
             success: function(res) {
                 console.log(res);
-                that.processDoubanData(res.data,key);
+                that.processDoubanData(res.data, key,categoryTitle);
             },
 
             fail: (error) => {
@@ -54,7 +55,7 @@ Page({
         })
     },
 
-    processDoubanData: function(moviesDouban ,key) {
+    processDoubanData: function(moviesDouban ,key, categoryTitle) {
             var movies = [];
 
             // 遍历 对标题进行出处理
@@ -69,6 +70,7 @@ Page({
                 var temp = {
                     title : title,
                     average : subject.rating.average,
+                    stars: util.convertToStarsArray(subject.rating.stars),
                     coverageUrl:subject.images.large,
                     movieId:subject.id
                 }
@@ -78,6 +80,7 @@ Page({
 
             var readyData = {};
             readyData[key] = {
+                categoryTitle: categoryTitle,
                 movies: movies,
             };
             this.setData(readyData);
