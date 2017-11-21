@@ -28,14 +28,14 @@
 
 .more-text {
      vertical-align: middle; 
-    margin-right: 10rpx;
-    color: #1f4ba5;
+     margin-right: 10rpx;
+     color: #1f4ba5;
 }
 
 .more-img{
     width: 9rpx;
     height: 16rpx;
-     vertical-align: middle; 
+    vertical-align: middle; 
 }
 
 .movies-container{
