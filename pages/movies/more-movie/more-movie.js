@@ -28,7 +28,7 @@ Page({
                 baseUrl += '/v2/movie/coming_soon';
             break;
 
-            case "Top250":
+            case "豆瓣Top250":
                 baseUrl += '/v2/movie/top250';
              break;
         }
@@ -63,5 +63,9 @@ Page({
         this.setData({
             movies: movies
         })
+    },
+
+    onScrollLower:function(event){
+        console.log('可以加载更多啦');
     },
 })

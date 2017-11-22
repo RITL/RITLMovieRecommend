@@ -2,6 +2,7 @@
 
 .grid-container{
     margin: 40rpx 0 40rpx 6rpx;
+    height: 1270rpx;
 }
 
 .single-view-container{
