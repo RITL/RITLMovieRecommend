@@ -29,31 +29,11 @@ Page({
 
     getMovieListData: function (url, key, categoryTitle) {
 
-        var that = this;
-        wx.request({
-            url: url,
-            header: {
-                'Content-Type': 'application/xml'
-            },
-
-            data: {
-                'count' : '3'
-            },
-
-            success: function(res) {
-                console.log(res);
-                that.processDoubanData(res.data, key,categoryTitle);
-            },
-
-            fail: (error) => {
-                console.log(error);
-            },
-
-            complete: () => {
-
-            },
-        })
+        util.http(url,(res)=>{
+            this.processDoubanData(res, key, categoryTitle);
+        },{count:3});
     },
+
 
     processDoubanData: function(moviesDouban ,key, categoryTitle) {
             var movies = [];
@@ -84,5 +64,14 @@ Page({
                 movies: movies,
             };
             this.setData(readyData);
+    },
+
+
+    onMoreTap: function(event){
+
+        var category = event.currentTarget.dataset.category;
+        wx.navigateTo({
+            url: 'more-movie/more-movie?category=' + category,
+        })
     },
 })
