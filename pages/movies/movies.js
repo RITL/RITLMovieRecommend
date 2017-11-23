@@ -8,7 +8,10 @@ Page({
     data:{
         inTheaters:{},
         comingSoon:{},
-        top250:{}
+        top250:{},
+        containerShow: true,
+        searchPanelShow: false,
+        searchResult:[]
     },
 
     onLoad: function(option) {
@@ -73,5 +76,21 @@ Page({
         wx.navigateTo({
             url: 'more-movie/more-movie?category=' + category,
         })
+    },
+
+    onBindFocus: function(event){
+        console.log("onBindFocus");
+        this.setData({
+            containerShow: false,
+            searchPanelShow: true,
+            searchResult: [],
+        });
+    },
+
+    onCancleImgTap: function(event){
+        this.setData({
+            containerShow: true,
+            searchPanelShow: false
+        });
     },
 })
