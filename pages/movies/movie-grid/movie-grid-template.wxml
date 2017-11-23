@@ -2,7 +2,7 @@
 
 <template name='movie-grid-template'>
 <scroll-view class='grid-container' 
-scroll-y="true" scroll-x="false" bindscrolltolower="onScrollLower">
+scroll-y="true" scroll-x="false" bindscrolltolower="onScrollLower" lower-threshold="0">
     <block wx:for="{{movies}}" wx:for-item="movie" wx:key="">
         <view class='single-view-container'>
             <template is="movieTemplate" data="{{...movie}}"></template>

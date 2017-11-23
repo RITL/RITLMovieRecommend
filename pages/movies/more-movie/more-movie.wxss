@@ -1,1 +1,5 @@
 @import '../movie-grid/movie-grid-template.wxss';
+
+.movie-grid-container {
+    margin-bottom: 0rpx;
+}

@@ -6,7 +6,9 @@ Page({
 
     data: {
         navigateTitle: "",
-        movies : {}
+        movies : [],
+        requestUrl:"",
+        totalCount : 0,
     },
 
     onLoad: function (options) {
@@ -32,6 +34,10 @@ Page({
                 baseUrl += '/v2/movie/top250';
              break;
         }
+
+        this.setData({
+            requestUrl: baseUrl,   
+        })
 
         util.http(baseUrl, this.processDoubanData);
     },
@@ -60,12 +66,24 @@ Page({
             movies.push(temp);
         }
 
+        var movies_temp = this.data.movies;
+        movies_temp = movies_temp.concat(movies);
+
+        var totalCount = this.data.totalCount;
+        totalCount += 20;
+
         this.setData({
-            movies: movies
+            movies: movies_temp,
+            totalCount: totalCount     
         })
     },
 
+
     onScrollLower:function(event){
         console.log('可以加载更多啦');
+        //获得拼接url
+        var nextUrl = this.data.requestUrl + "?start=" + this.data.totalCount + "&count=20";
+
+        util.http(nextUrl, this.processDoubanData);
     },
 })
