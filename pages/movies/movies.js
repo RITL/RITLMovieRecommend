@@ -83,7 +83,7 @@ Page({
         this.setData({
             containerShow: false,
             searchPanelShow: true,
-            // searchResult: {},
+            searchResult: {},
         });
     },
 

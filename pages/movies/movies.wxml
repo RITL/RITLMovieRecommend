@@ -3,7 +3,11 @@
 
 <view class="search">
     <icon type='search' class='search-image' size='13' color='#405f80'></icon>
-    <input type='text' placeholder='正义联盟' placeholder-class='placeholder' bindfocus="onBindFocus"  bindconfirm='onBindConfirm'></input>
+    <input type='text' placeholder='正义联盟' 
+    placeholder-class='placeholder' 
+    bindfocus="onBindFocus"  
+    bindconfirm='onBindConfirm'
+    bindblur = 'onBindConfirm'></input>
     <image class='xx-img' src='/images/icon/xx.png' bindtap='onCancleImgTap'  wx:if="{{searchPanelShow}}"></image>
 </view>
 
