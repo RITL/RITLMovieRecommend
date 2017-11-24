@@ -1,10 +1,10 @@
 <import src='movie-list/movie-list-template.wxml' />
-<import stc='movie-grid/movie-grid-template.wxml' />
+<import src='movie-grid/movie-grid-template.wxml' />
 
 <view class="search">
     <icon type='search' class='search-image' size='13' color='#405f80'></icon>
-    <input type='text' placeholder='正义联盟' placeholder-class='placeholder' bindfocus="onBindFocus" bindchange="onBindChange"></input>
-    <image class='xx-img' src='/images/icon/xx.png' bindtap='onCancleImgTap' wx:if="{{searchPanelShow}}"></image>
+    <input type='text' placeholder='正义联盟' placeholder-class='placeholder' bindfocus="onBindFocus"  bindconfirm='onBindConfirm'></input>
+    <image class='xx-img' src='/images/icon/xx.png' bindtap='onCancleImgTap'  wx:if="{{searchPanelShow}}"></image>
 </view>
 
 <view class='container' wx:if="{{containerShow}}">
@@ -21,6 +21,5 @@
 
 
 <view class='search-panel' wx:if="{{searchPanelShow}}">
-    <template is='movie-grid-template'/>
-    <text>hahahaha</text>
+     <template is='movieGridTemplate' data="{{...searchResult}}" /> 
 </view>

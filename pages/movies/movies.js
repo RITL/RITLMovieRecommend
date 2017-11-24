@@ -11,7 +11,7 @@ Page({
         top250:{},
         containerShow: true,
         searchPanelShow: false,
-        searchResult:[]
+        searchResult:{}
     },
 
     onLoad: function(option) {
@@ -19,11 +19,11 @@ Page({
         // 基础的url
         var baseUrl = app.globalData.doubanBase;
         //热映
-        var in_theatersUrl = baseUrl + '/v2/movie/in_theaters';
+        var in_theatersUrl = baseUrl + '/v2/movie/in_theaters?start=0&count=3';
         //即将
-        var comingSoonUrl = baseUrl + '/v2/movie/coming_soon';
+        var comingSoonUrl = baseUrl + '/v2/movie/coming_soon?start=0&count=3';
         //top 250
-        var top250Url = baseUrl + '/v2/movie/top250';
+        var top250Url = baseUrl + '/v2/movie/top250?start=0&count=3';
 
         this.getMovieListData(in_theatersUrl,'inTheaters','正在热映');
         this.getMovieListData(comingSoonUrl,'comingSoon','即将上映');
@@ -34,7 +34,7 @@ Page({
 
         util.http(url,(res)=>{
             this.processDoubanData(res, key, categoryTitle);
-        },{count:3});
+        });
     },
 
 
@@ -83,7 +83,7 @@ Page({
         this.setData({
             containerShow: false,
             searchPanelShow: true,
-            searchResult: [],
+            // searchResult: {},
         });
     },
 
@@ -92,5 +92,14 @@ Page({
             containerShow: true,
             searchPanelShow: false
         });
+    },
+
+    onBindConfirm: function(event){
+        //获得文字
+        var searchText = event.detail.value;
+        var baseUrl = app.globalData.doubanBase;
+        var searchUrl = baseUrl + '/v2/movie/search' + '?q=' + searchText;
+
+        this.getMovieListData(searchUrl,'searchResult','')
     },
 })
