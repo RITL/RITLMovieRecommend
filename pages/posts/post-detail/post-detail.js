@@ -57,7 +57,7 @@ Page({
     },
 
     /// 设置音频
-    setMusicMonitor:  ()=> {
+    setMusicMonitor: () => {
 
         var that = this;
 
@@ -89,7 +89,7 @@ Page({
     },
 
     // 收藏按钮
-    onCollectionTap: (event) =>{
+    onCollectionTap: (event) => {
 
         //获取缓存
         var postsCollected = wx.getStorageSync('posts_Collected');
